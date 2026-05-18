@@ -22,7 +22,7 @@ git clone https://github.com/kulikman/open-design-kit.git /Users/DEV/TEMLATES/Op
 
 ### Вариант A — Claude Code (рекомендуется)
 
-В корне твоего проекта создай `.cursorrules` или добавь в существующий:
+Задай правила так, чтобы агент открывал эти пути перед UI-задачами. Удобные варианты: `CLAUDE.md` в корне проекта, team/system instructions, или (если совмещаешь с Cursor) `.cursorrules` / `.cursor/rules`.
 
 ```
 # Design skill
@@ -30,11 +30,12 @@ Read /Users/DEV/TEMLATES/Open-design-kit/SKILL.md before any UI/design task.
 For brand context read /Users/DEV/TEMLATES/Open-design-kit/design-systems/<project>/DESIGN.md
 For animation patterns read /Users/DEV/TEMLATES/Open-design-kit/references/animations.md
 For design styles read /Users/DEV/TEMLATES/Open-design-kit/references/design-styles.md
+Before final delivery run /Users/DEV/TEMLATES/Open-design-kit/references/critique-guide.md (5D review).
 ```
 
 ### Вариант B — Cursor
 
-Те же строки в `.cursorrules` в корне проекта.
+Те же инструкции можно положить в `.cursorrules` в корне проекта **или** в правила Cursor (например `.cursor/rules/*.md`) — зависит от вашей версии и настройки IDE.
 
 ### Вариант C — Прямо в чате Claude
 
@@ -106,7 +107,7 @@ Make it responsive — the mobile nav is broken.
 Landing page for [product].
 Target: [audience].
 Main CTA: [action].
-Aesthetic: [direction from design-styles.md or leave blank].
+Aesthetic: [direction from references/design-styles.md or leave blank].
 Output: HTML standalone.
 Sections: hero, how it works, pricing, CTA.
 ```
@@ -175,8 +176,9 @@ git push
 ```
 open-design-kit/
 │
+├── HOW-TO-USE.md                  ← Установка, промпты, рецепты, FAQ
 ├── SKILL.md                        ← Главный файл. Агент читает это первым.
-│                                     6 фаз: Detect → Brief → Decide → Format → Animate → QA
+│                                     6 фаз: Discover → Define → Design system → UI & layout → Motion → Handoff & QA
 │
 ├── design-systems/
 │   ├── _base/DESIGN.md             ← Шаблон. Копируй под каждый проект.
@@ -195,13 +197,13 @@ open-design-kit/
 
 ---
 
-## Что делает агент автоматически
+## Что делает агент — при подключённых файлах и явном промпте
 
-1. **Читает DESIGN.md** — не переспрашивает про бренд если файл есть
-2. **Выбирает формат** — HTML для прототипов, TSX для production
-3. **Анимирует каждую секцию** — статичный output запрещён правилами
-4. **Запускает 5D ревью** — оценивает и фиксит до выдачи
-5. **Добавляет unexpected detail** — одна деталь которую не просили
+1. **DESIGN.md** — использует бренд-контекст, если вы дали путь к файлу и он заполнен (меньше повторных вопросов).
+2. **Формат вывода** — задаёте вы (`HTML standalone`, `Next.js TSX` и т.д.); skill-файлы задают структуру и ограничения.
+3. **Motion** — ориентиры в `references/animations.md` и фаза 5 в `SKILL.md`; для кликабельных прототипов — `skills/prototype/SKILL.md` (там про интерактив, не «картинку»).
+4. **5D ревью** — процедура в `references/critique-guide.md`; сработает, если прописать в правилах проекта или попросить в задаче.
+5. **Дополнительные детали** — только если вы это запросили в промпте (kit сам по себе не добавляет «скрытые» фичи).
 
 ---
 
@@ -211,7 +213,7 @@ open-design-kit/
 Заполни DESIGN.md — агент не будет переспрашивать про бренд. Это главная экономия.
 
 **Как сказать агенту какой стиль хочу?**
-Укажи направление из `design-styles.md` в задаче: `Aesthetic: Neo-Brutalist`
+Укажи направление из `references/design-styles.md` в задаче: `Aesthetic: Neo-Brutalist`
 
 **Хочу Next.js компонент, не HTML?**
 Укажи в задаче: `Output: Next.js TSX`

@@ -2,6 +2,8 @@
 
 Use when building or critiquing **marketing / landing** pages: hero, social proof, pricing, FAQs, signup flows.
 
+**Related in this kit:** brand/tokens — `design-systems/<project>/DESIGN.md`; motion timing — `references/animations.md`; aesthetic directions — `references/design-styles.md`; full workflow — `SKILL.md` (repo root).
+
 ## Goals
 
 - Communicate **value in seconds**: headline clarifies who it’s for and the outcome.

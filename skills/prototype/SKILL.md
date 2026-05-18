@@ -273,3 +273,12 @@ For presenting to stakeholders — show clickable zones on hover:
 6. **Error states.** At least one screen must show an error/empty state.
 7. **Keyboard navigation.** Enter submits forms, Escape closes modals.
 8. **No broken frames.** Device frame always perfectly contains content.
+
+---
+
+## See also (repo root paths)
+
+- `SKILL.md` — six-phase workflow before you scope to prototype-only work.
+- `references/animations.md` — durations, easing, reduced-motion defaults.
+- `references/design-styles.md` — pick one aesthetic direction for the whole prototype.
+- `references/critique-guide.md` — optional 5D pass before delivery.

@@ -23,6 +23,7 @@ Use this skill when the user asks for **end-to-end design work**: product UX, vi
 ## Phase 3 — Design system alignment
 
 - Open `design-systems/_base/DESIGN.md` and map brand + tokens to the product (or note gaps).
+- When the brief names an aesthetic direction (or you need a coherent visual vocabulary), use `references/design-styles.md` and commit to one direction only.
 - Specify typography scale, spacing rhythm, color roles (semantic), elevation, radius, and icon style.
 - Output: token table or delta list, “do / don’t” for brand usage.
 
@@ -30,6 +31,7 @@ Use this skill when the user asks for **end-to-end design work**: product UX, vi
 
 - For marketing surfaces, follow `skills/landing-page/SKILL.md`.
 - For app chrome and components, follow `skills/ui-components/SKILL.md`.
+- For **clickable, multi-screen prototypes** (HTML/JSX state machine, device frames), follow `skills/prototype/SKILL.md`.
 - Output: section-by-section layout notes, responsive behavior (breakpoints), and component inventory.
 
 ## Phase 5 — Motion & feedback
@@ -42,6 +44,7 @@ Use this skill when the user asks for **end-to-end design work**: product UX, vi
 
 - Produce **implementation-ready notes**: spacing in the design grid, token names, interaction states, and copy deck where needed.
 - Run an accessibility pass: focus order, labels, contrast, touch targets, keyboard paths.
+- Optional quality gate: self-review using `references/critique-guide.md` (5D) when the brief calls for a high bar before delivery.
 - Output: acceptance criteria checklist, open risks, and next iteration hypotheses.
 
 ## Escalation

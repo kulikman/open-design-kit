@@ -2,6 +2,8 @@
 
 Use when designing **application UI**: dashboards, settings, forms, tables, navigation, empty states.
 
+**Related in this kit:** brand/tokens — `design-systems/<project>/DESIGN.md`; motion — `references/animations.md`; quality bar — `references/critique-guide.md`; full workflow — `SKILL.md` (repo root).
+
 ## Principles
 
 - **Predictability**: same control = same behavior everywhere.
